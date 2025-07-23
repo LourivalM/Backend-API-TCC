@@ -1,0 +1,49 @@
+[
+  {
+    "imageUrl": "NoahShitzu6Anos1.jpg",
+    "caption": "Domingo com a Noah!!!!",
+    "userId": 6,
+    "likes": 1,
+    "createdAt": "2025-07-20T02:33:09.100Z",
+    "id": 1,
+    "likedByUsers": [
+      6
+    ]
+  },
+  {
+    "imageUrl": "Carol e Catarina 3 anos 3.jpg",
+    "caption": "Amarelinha",
+    "userId": 10,
+    "likes": 0,
+    "createdAt": "2025-07-21T12:00:22.733Z",
+    "id": 2,
+    "likedByUsers": []
+  },
+  {
+    "imageUrl": "MimosaFêmea11anos.jpg",
+    "caption": "Noite do UNO não é para fracos.",
+    "userId": 6,
+    "likes": 0,
+    "createdAt": "2025-07-21T14:40:10.864Z",
+    "id": 3,
+    "likedByUsers": []
+  },
+  {
+    "imageUrl": "Merendinha - Maria 11.jpg",
+    "caption": "teste",
+    "userId": 6,
+    "likes": 0,
+    "createdAt": "2025-07-21T16:38:11.378Z",
+    "id": 4,
+    "likedByUsers": []
+  },
+  {
+    "imageUrl": "MaiadoMacho7anos.jpg",
+    "caption": "Miado",
+    "userId": 6,
+    "likes": 0,
+    "createdAt": "2025-07-21T23:34:53.400Z",
+    "id": 5,
+    "likedByUsers": []
+  }
+]
