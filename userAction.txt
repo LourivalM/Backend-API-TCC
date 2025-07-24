@@ -1,0 +1,1 @@
+Ações do usuário: Configuração do servidor back-end 'api-adotapet' para aceitar uploads de imagens e enviá-las para a conta Cloudinary. Desafios: Nenhum. Solução: Instalação das dependências 'cloudinary', 'multer' e 'dotenv', criação e configuração do arquivo de ambiente '.env', adição do '.env' ao '.gitignore' e modificação do 'index.js' para adicionar o endpoint de upload.

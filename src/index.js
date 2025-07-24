@@ -1,9 +1,22 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors")
 const fs = require("fs"); // Importar o módulo fs
+const cloudinary = require('cloudinary').v2;
+const multer = require('multer');
 
 const app = express();
+
+// Cloudinary configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
+
+// Multer configuration
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -233,6 +246,23 @@ loadPosts();
 loadOngs();
 loadPartners();
 loadArticles();
+
+app.post('/upload', upload.single('image'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ message: 'Nenhum arquivo enviado.' });
+    }
+
+    const fileBuffer = req.file.buffer;
+    const dataUri = `data:${req.file.mimetype};base64,${fileBuffer.toString('base64')}`;
+
+    cloudinary.uploader.upload(dataUri, (error, result) => {
+        if (error) {
+            console.error('Erro ao fazer upload para o Cloudinary:', error);
+            return res.status(500).json({ message: 'Erro ao fazer upload da imagem.' });
+        }
+        res.json({ imageUrl: result.secure_url });
+    });
+});
 
 app.post("/login", (req, res) => {
     try {
